@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <p>
+      Q1. Write one example explaining how you can write a callback function.
+    </p>
+    <pre>
+        function myfunction(num,callback){
+            console.log("function executing first after",num,"milli secs");
+            callback();
+           }
+           function funcallback(){
+               console.log("executing after my function");
+           }
+          setTimeout(myfunction,2000,2000,funcallback);
+    </pre>
+    <h3>OUTPUT:</h3>
+    <pre>
+        function executing first after 2000 milli secs
+        executing after my function
+    </pre>
+    <h4>
+      the above code is executed synchronously .the funcallback function is
+      passed as parameter to myfunction setTimeout() method executes myfunction
+      only after 2 seconds so funcallback will wait for myfuntion to get
+      executed.
+    </h4>
+    <pre>
+        Q2."Write a callback function to print numbers from 1 to 7, in which 1 should be printed after 1 sec, 2 should be printed after 2 sec, 3 should be printed after 3 sec, and so on. 
+
+        Explain callback hell.
+        Numbers
+        1
+        2
+        3
+        4
+        5
+        6
+        7" 
+    </pre>
+    <pre>
+        setTimeout(()=>{
+            console.log("1");
+            setTimeout(()=>{
+                console.log("2");
+                setTimeout(()=>{
+                    console.log("3");
+                    setTimeout(()=>{
+                        console.log("4");
+                        setTimeout(()=>{
+                            console.log("5");
+                            setTimeout(()=>{
+                                console.log("6");
+                                setTimeout(()=>{
+                                    console.log("7");
+                                },7000)
+                            },6000)
+                        },5000)
+                    },4000)
+                },3000)
+            },2000)
+            },1000)
+    
+    </pre>
+    <h3>OUTPUT:</h3>
+    <PRE>
+        1
+        2
+        3
+        4
+        5
+        6
+        7
+    </PRE>
+    <pre>
+        Q3."Write the promise function to print numbers from 1 to 7, in which 1 should be printed after 1 sec, 2 should be printed after 2 sec, 3 should be printed after 3 sec, and so on. 
+
+        Numbers
+        1
+        2
+        3
+        4
+        5
+        6
+        7"
+        <h3>output:</h3>
+        function promisechain(alpha,timeout){
+            let result=new Promise((resolve, reject) => {
+                console.log(alpha);
+            },timeout);
+        }
+        
+        function show(){
+            result.then(1,1000);
+            result.then(2,2000);
+            result.then(3,3000);
+            result.then(4,4000);
+            result.then(5,5000);
+            result.then(6,1000);
+            result.then(7,1000);
+        }
+    </pre>
+    <p>
+      Q4."Create a promise function accepting an argument, if yes is passed to
+      the function then it should go to resolved state and print Promise
+      Resolved, and if nothing is passed then it should go to reject the state
+      and catch the error and print Promise Rejected "
+    </p>
+    <pre>
+let fg="yes";
+let temp=new Promise((res, rej)=>{
+if(fg==='yes'){
+    res("promise is resolved");
+}
+else 
+rej(" promise is rejected");
+});
+temp.then((i)=>{
+    console.log(i);
+}).catch((err)=>{
+    console.log(err);
+})
+    </pre>
+    <p>Q5.Create examples to explain callback function</p>
+    <p>Q6.Create examples to explain callback hell function</p>
+    <p>Q7.Create examples to explain promises function</p>
+    <p>Q8.Create examples to explain async await function</p>
+    <p>Q9.Create examples to explain promise.all function</p>
+  </body>
+</html>
