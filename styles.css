@@ -1,3 +1,19 @@
 body{
-    background-color: linen;
+    background-color: rgb(172, 146, 120);
+}
+.qstn{
+    color: black;
+}
+.ans{
+    color: blue;
+}
+.output{
+    color: brown;
+}
+h4{
+    color:indigo;
+}
+h1{
+    text-align: center;
+    color: red;
 }
